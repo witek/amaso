@@ -1,0 +1,20 @@
+;; https://shadow-cljs.github.io/docs/UsersGuide.html#config
+{
+
+ :dev-http {50010 "public"}
+ 
+ :source-paths ["src"]
+
+ :dependencies
+ []
+ 
+ :builds
+ {
+  :app {:target     :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+        :modules    {:main {:init-fn amaso.demo-app/init}}}
+  }
+
+ :open-file-command ["emacsclient" "-n" ["+%s:%s" :line :column] :file]
+ }
